@@ -1,11 +1,9 @@
 {
-<<<<<<< HEAD
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "functions": {
     "api/contact.py": {
       "runtime": "python3.12"
-=======
   "services": {
     "frontend": {
       "root": ".",
@@ -15,21 +13,17 @@
       "root": "backend",
       "framework": "fastapi",
       "entrypoint": "main.py"
->>>>>>> 4c057bdd04f2c35c6914e29b5af92a90eb0dee11
     }
   },
   "rewrites": [
     {
-<<<<<<< HEAD
       "src": "/api/contact",
       "dest": "/api/contact.py"
-=======
       "source": "/api(/.*)?",
       "destination": {
         "type": "service",
         "service": "backend"
       }
->>>>>>> 4c057bdd04f2c35c6914e29b5af92a90eb0dee11
     },
     {
       "source": "/(.*)",
