@@ -14,13 +14,9 @@ Aethel Groups is a full-stack corporate web application featuring an enterprise-
 
 ```
 Aethel Groups/
-├── api/                      # Vercel Python Serverless Functions
-│   ├── contact.py            # POST /api/contact — sends email via Resend
-│   └── requirements.txt      # Python deps for serverless functions
-├── backend/                  # Local FastAPI dev server (optional, for local testing)
-│   ├── main.py               # FastAPI app (mirrors api/contact.py functionality)
-│   ├── requirements.txt      # Python dependencies
-│   └── .env                  # Environment variables (never committed)
+├── api/                      # Unified Python FastAPI Backend (Vercel & Local)
+│   ├── main.py               # FastAPI application (CORS, Resend integration)
+│   └── requirements.txt      # Python dependencies for the backend
 ├── public/                   # Static assets (favicon, images)
 ├── src/
 │   ├── components/           # Reusable UI components
@@ -60,18 +56,13 @@ Aethel Groups/
 | [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) | Scroll-triggered animations |
 | Vanilla CSS | Styling & design system |
 
-### Backend (Production — Vercel Serverless)
+### Backend (Unified — FastAPI on Vercel & Local Dev)
 | Technology | Purpose |
 |---|---|
 | Python 3.12 | Runtime |
-| [Resend](https://resend.com/) | Transactional email API |
-| `http.server.BaseHTTPRequestHandler` | Vercel serverless handler |
-
-### Backend (Local Development — optional)
-| Technology | Purpose |
-|---|---|
 | [FastAPI](https://fastapi.tiangolo.com/) | REST API framework |
 | [Uvicorn](https://www.uvicorn.org/) | ASGI server |
+| [Resend](https://resend.com/) | Transactional email API |
 | [Pydantic](https://docs.pydantic.dev/) | Request validation |
 | [python-dotenv](https://github.com/theskumar/python-dotenv) | Environment config |
 
@@ -105,7 +96,7 @@ The Vite dev server automatically proxies `/api/*` requests to `http://localhost
 If you want to test the contact form locally, you can run the FastAPI server:
 
 ```bash
-cd backend
+cd api
 
 # Create and activate a virtual environment
 python -m venv venv
@@ -115,7 +106,7 @@ venv\Scripts\activate   # Windows
 pip install -r requirements.txt
 ```
 
-Create a `.env` file inside `backend/`:
+Create a `.env` file inside `api/` (or the root directory):
 
 ```env
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxx
@@ -125,7 +116,8 @@ RECIPIENT_EMAIL=your@email.com
 Start the API server:
 
 ```bash
-uvicorn main:app --reload
+python main.py
+# Or: uvicorn main:app --reload
 # API available at http://localhost:8000
 ```
 
@@ -146,7 +138,7 @@ start-dev.bat
 The project is configured for Vercel out-of-the-box:
 
 1. **Frontend** — Vite builds to `dist/`, served as a static SPA with SPA fallback routing.
-2. **Backend** — `api/contact.py` is deployed as a Python 3.12 serverless function at `/api/contact`.
+2. **Backend** — `api/main.py` is deployed as a FastAPI serverless application, with Vercel routing `/api/*` to it.
 
 ### Environment Variables (set in Vercel dashboard)
 
@@ -200,7 +192,7 @@ The project is configured for Vercel out-of-the-box:
 ## 📧 Contact Form Flow
 
 ```
-User fills form → POST /api/contact → api/contact.py (Vercel Serverless)
+User fills form → POST /api/contact → api/main.py (FastAPI on Vercel)
                                           ↓
                                    Resend Email API
                                           ↓

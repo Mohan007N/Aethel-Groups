@@ -5,7 +5,7 @@ echo ========================================
 echo.
 
 echo [1/2] Starting Python Backend (Port 8000)...
-start cmd /k "cd /d %~dp0backend && pip install -r requirements.txt && python main.py"
+start cmd /k "cd /d %~dp0api && pip install -r requirements.txt && python main.py"
 
 timeout /t 5
 

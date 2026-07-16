@@ -1,6 +1,2 @@
-fastapi==0.115.6
-uvicorn==0.34.0
-resend
-pydantic[email]==2.10.3
-python-dotenv==1.0.1
-email-validator==2.2.0
+# Deprecated: Unified backend is now in api/main.py.
+# This file is kept here as a placeholder.
