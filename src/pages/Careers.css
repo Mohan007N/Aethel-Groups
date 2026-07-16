@@ -1,0 +1,76 @@
+/* ============================================
+   CAREERS PAGE STYLES
+   ============================================ */
+
+/* No Openings Card */
+.no-openings-card {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--space-4xl) var(--space-2xl);
+  background: var(--color-bg-section);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+.no-openings-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  color: var(--color-text-lighter);
+  margin: 0 auto var(--space-xl);
+  border: 1px solid var(--color-border);
+}
+
+.no-openings-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-light);
+}
+
+.no-openings-card p {
+  font-size: 0.9375rem;
+  color: var(--color-text-lighter);
+  max-width: 440px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Future Roles Grid */
+.future-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.future-role-card {
+  text-align: center;
+}
+
+.future-role-card .card-icon {
+  margin: 0 auto var(--space-lg);
+}
+
+/* Careers CTA */
+.careers-cta-block {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.careers-cta-block h2 {
+  margin-bottom: var(--space-md);
+}
+
+.careers-cta-block p {
+  font-size: 1.0625rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.7;
+}

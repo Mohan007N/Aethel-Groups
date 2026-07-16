@@ -1,0 +1,101 @@
+.hero-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.hero-visual__network {
+  position: absolute;
+  inset: 10%;
+  width: 80%;
+  height: 80%;
+  opacity: 0.7;
+}
+
+.hero-visual__card {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  transition: transform 0.3s ease-out;
+}
+
+.hero-visual__card-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+}
+
+.hero-visual__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+  color: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+.hero-visual__card-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-family: var(--font-secondary);
+}
+
+.hero-visual__ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-light);
+}
+
+.hero-visual__ring--1 {
+  width: 70%;
+  height: 70%;
+  top: 15%;
+  left: 15%;
+  opacity: 0.5;
+}
+
+.hero-visual__ring--2 {
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .hero-visual {
+    max-width: 360px;
+  }
+
+  .hero-visual__card-inner {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .hero-visual__card-label {
+    font-size: 0.6875rem;
+  }
+
+  .hero-visual__card-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hero-visual__card-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+}

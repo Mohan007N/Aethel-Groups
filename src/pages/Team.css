@@ -1,0 +1,323 @@
+/* ============================================
+   TEAM PAGE STYLES (PREMIUM)
+   ============================================ */
+
+.team-founders-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .team-founders-grid {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+}
+
+/* Founder Card */
+.team-founder-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2xl);
+  padding: var(--space-2xl);
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-founder-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-brand);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-founder-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(13, 21, 38, 0.08);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.team-founder-card:hover::before {
+  opacity: 1;
+}
+
+.team-founder-card__portrait-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.team-founder-card__portrait {
+  width: 180px;
+  height: 220px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, #F1F5F9, #E2E8F0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease;
+}
+
+.team-founder-card:hover .team-founder-card__portrait {
+  transform: scale(1.02);
+}
+
+.team-founder-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-founder-card__info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.team-founder-card__name {
+  font-size: 1.625rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xxs);
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.team-founder-card__role {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-secondary);
+}
+
+.team-founder-card__bio {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  line-height: 1.65;
+  margin-bottom: var(--space-md);
+}
+
+/* Founder Skill Tags */
+.team-founder-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--space-lg);
+}
+
+.team-founder-card__tags span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  background: var(--gradient-brand-soft);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-secondary);
+  border: 1px solid rgba(37, 99, 235, 0.08);
+}
+
+.team-founder-card__linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #0A66C2;
+  color: #fff;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-secondary);
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-top: auto;
+}
+
+.team-founder-card__linkedin:hover {
+  background: #004182;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.25);
+}
+
+@media (max-width: 768px) {
+  .team-founder-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-xl);
+    gap: var(--space-lg);
+  }
+  .team-founder-card__portrait {
+    width: 150px;
+    height: 180px;
+  }
+  .team-founder-card__tags {
+    justify-content: center;
+  }
+  .team-founder-card__linkedin {
+    margin: 0 auto;
+  }
+}
+
+/* Philosophy Section */
+.team-philosophy-box {
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-2xl);
+}
+
+.philosophy-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-lg);
+}
+
+.philosophy-item__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-xl);
+  background: var(--gradient-brand-soft);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  transition: transform 0.3s ease;
+}
+
+.philosophy-item:hover .philosophy-item__icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.philosophy-item__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-display);
+}
+
+.philosophy-item__desc {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* Coming Soon Placeholder Cards */
+.team-coming-grid {
+  max-width: 1000px;
+  margin: 0 auto var(--space-3xl);
+}
+
+.team-placeholder-card {
+  padding: var(--space-2xl) var(--space-lg);
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.team-placeholder-card:hover {
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 12px 30px rgba(13, 21, 38, 0.06);
+  transform: translateY(-4px);
+}
+
+.team-placeholder-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-brand-soft);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.team-placeholder-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-display);
+}
+
+.team-placeholder-card__dept {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-secondary);
+}
+
+.team-placeholder-card__desc {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.team-placeholder-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  transition: all var(--transition-fast);
+  font-family: var(--font-secondary);
+}
+
+.team-placeholder-card__link svg {
+  transition: transform var(--transition-fast);
+}
+
+.team-placeholder-card:hover .team-placeholder-card__link svg {
+  transform: translateX(4px);
+}
+
+/* Join CTA */
+.team-join-cta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.team-join-cta p {
+  font-size: 1.0625rem;
+  color: var(--color-text-light);
+}
